@@ -7,13 +7,49 @@ using System.Threading.Tasks;
 
 namespace EventMaker_ASS.Model
 {
-    public class Event 
+    public class Event : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Place { get; set; }
-        public DateTime DateTime { get; set; }
+        private int _id;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+
+        private string _place;
+
+        public string Place
+        {
+            get { return _place; }
+            set { _place = value; }
+        }
+
+        private DateTime _dateTime;
+
+        public DateTime DateTime
+        {
+            get { return _dateTime; }
+            set { _dateTime = value; }
+        }
 
         public Event()
         {
