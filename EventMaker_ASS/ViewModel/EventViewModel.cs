@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EventMaker_ASS.ViewModel
 {
-    public class EventViewModel
+    public class EventViewModel // : INotifyPropertyChanged
     {
        private EventCatalogSingleton SingleEvent { get; set; }
 
@@ -17,6 +17,12 @@ namespace EventMaker_ASS.ViewModel
         public string Description { get; set; }
         public string Place { get; set; }
 
+        /// <summary>
+        /// Vi skal huske at implementere 
+        ///     OnPropertyChanged(nameof(DateTimeOffset));
+        ///     OnPropertyChanged(nameof(TimeSpan));
+        /// i vores propfulls. 
+        /// </summary>
         private DateTimeOffset _date;
 
         public DateTimeOffset Date
