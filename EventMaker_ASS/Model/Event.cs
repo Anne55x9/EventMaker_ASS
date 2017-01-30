@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EventMaker_ASS.Model
 {
-    public class Event
+    public class Event 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -18,7 +19,6 @@ namespace EventMaker_ASS.Model
         {
 
         }
-
         public override string ToString()
         {
             return base.ToString();
