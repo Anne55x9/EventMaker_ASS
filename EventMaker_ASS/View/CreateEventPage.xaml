@@ -14,15 +14,15 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="89,108,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="175,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="175,104,0,0" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay}" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="89,138,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="175,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="175,134,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="89,168,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" Margin="175,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Margin="175,164,0,0" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay}" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="89,198,0,0" TextWrapping="Wrap" Text="Place" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="175,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
-        <TimePicker HorizontalAlignment="Left" Margin="56,303,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="175,194,0,0" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay}" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay}" />
+        <TimePicker HorizontalAlignment="Left" Margin="56,303,0,0" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay}" />
 
     </Grid>
 </Page>
