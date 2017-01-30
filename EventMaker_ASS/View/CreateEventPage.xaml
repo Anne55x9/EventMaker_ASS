@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="EventMaker_ASS.View.CreateEventPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventMaker_ASS.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="89,108,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="175,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="89,138,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="175,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="89,168,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Margin="175,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="89,198,0,0" TextWrapping="Wrap" Text="Place" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="175,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
+        <TimePicker HorizontalAlignment="Left" Margin="56,303,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
