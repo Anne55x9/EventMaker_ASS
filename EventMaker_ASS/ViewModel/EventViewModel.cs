@@ -16,10 +16,31 @@ namespace EventMaker_ASS.ViewModel
         public string Name { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }
-        public DateTimeOffset Date { get; set; }
-        public TimeSpan Time { get; set; }
 
-        
+        private DateTimeOffset _date;
+
+        public DateTimeOffset Date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+
+        private TimeSpan _time;
+
+        public TimeSpan Time
+        {
+            get { return _time; }
+            set { _time = value; }
+        }
+
+        public EventViewModel()
+        {
+            DateTime dt = System.DateTime.Now;
+            _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+        }
+
         //public DateTime DateTime { get; set; }
 
     }
