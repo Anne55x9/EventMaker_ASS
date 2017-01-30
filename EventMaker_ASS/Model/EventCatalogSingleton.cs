@@ -36,7 +36,6 @@ namespace EventMaker_ASS.Model
             NewEvent = new Model.Event();
            
             Events = new ObservableCollection<Event>();
-
         }
 
         public void AddEvent()

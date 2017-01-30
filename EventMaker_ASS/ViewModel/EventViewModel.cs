@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EventMaker_ASS.ViewModel
 {
-    class EventViewModel
+    public class EventViewModel
     {
-        public EventCatalogSingleton SingleEvent { get; set; }
+       private EventCatalogSingleton SingleEvent { get; set; }
  
     }
 }
