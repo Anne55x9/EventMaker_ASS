@@ -9,7 +9,7 @@ using EventMaker_ASS.Converter;
 
 namespace EventMaker_ASS.Handler
 {
-    class EventHandler
+    public class EventHandler
     {
         public EventViewModel evm { get; set; }
 

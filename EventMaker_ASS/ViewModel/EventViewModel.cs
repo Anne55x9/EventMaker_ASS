@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventMaker_ASS.Common;
+using System.Windows.Input;
+
 
 namespace EventMaker_ASS.ViewModel
 {
@@ -17,12 +20,8 @@ namespace EventMaker_ASS.ViewModel
         public string Description { get; set; }
         public string Place { get; set; }
 
-        /// <summary>
-        /// Vi skal huske at implementere 
-        ///     OnPropertyChanged(nameof(DateTimeOffset));
-        ///     OnPropertyChanged(nameof(TimeSpan));
-        /// i vores propfulls. 
-        /// </summary>
+        public ICommand CreateEventCommand { get; set; }
+
         private DateTimeOffset _date;
 
         public DateTimeOffset Date
@@ -39,12 +38,25 @@ namespace EventMaker_ASS.ViewModel
             set { _time = value; }
         }
 
+
+        /// <summary>
+        /// Nedenforstående property eventhandler er af datatypen Eventhandler 
+        /// og metoden i eventhandleren CreateEvnet kan nu tilgået via´"filstien"
+        /// Handler.EventHandler. 
+        /// </summary>
+        public Handler.EventHandler eventhandler { get; set; }
+        
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+            eventhandler = new Handler.EventHandler(this);
+            CreateEventCommand = new RelayCommand(eventhandler.CreateEvent, null);
         }
+
 
         //public DateTime DateTime { get; set; }
 
