@@ -40,8 +40,8 @@ namespace EventMaker_ASS.ViewModel
 
 
         /// <summary>
-        /// Nedenforstående property eventhandler er af datatypen Eventhandler 
-        /// og metoden i eventhandleren CreateEvnet kan nu tilgået via´"filstien"
+        /// Nedenforstående property eventhandler er af datatypen Eventhandler. 
+        /// Metoden i eventhandleren CreateEvnet kan nu tilgås via´"filstien"
         /// Handler.EventHandler. 
         /// </summary>
         public Handler.EventHandler eventhandler { get; set; }
