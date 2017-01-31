@@ -53,8 +53,8 @@ namespace EventMaker_ASS.ViewModel
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
-            eventhandler = new Handler.EventHandler(this);
-            CreateEventCommand = new RelayCommand(eventhandler.CreateEvent, null);
+            //eventhandler = new Handler.EventHandler(this);
+            //CreateEventCommand = new RelayCommand(eventhandler.CreateEvent, null);
         }
 
 
