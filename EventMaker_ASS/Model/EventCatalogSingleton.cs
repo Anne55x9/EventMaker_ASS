@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace EventMaker_ASS.Model
 {
-    class EventCatalogSingleton          
+    class EventCatalogSingleton         
     {
-        private static EventCatalogSingleton instance;
+        private static EventCatalogSingleton _instance;
 
         //Tom konstruktor
       
@@ -19,37 +19,31 @@ namespace EventMaker_ASS.Model
         {
             get
             {
-                if(instance == null)
+                if(_instance == null)
                 {
-                    instance = new EventCatalogSingleton();
+                    _instance = new EventCatalogSingleton();
                 }
-                return instance;
+                return _instance;
             }
         }
 
         public ObservableCollection<Event> Events { get; set; }
 
-        public Model.Event NewEvent { get; set; }
+        //public Model.Event NewEvent { get; set; }
 
         private EventCatalogSingleton()
         {
-            NewEvent = new Model.Event();
+            //NewEvent = new Model.Event();
            
             Events = new ObservableCollection<Event>();
         }
 
-        public void AddEvent()
+        public void AddEvent(Event NyEvent)
         {
-            Event tempEvent = new Model.Event();
-            tempEvent.Id = NewEvent.Id;
-            tempEvent.Name = NewEvent.Name;
-            tempEvent.Description = NewEvent.Description;
-            tempEvent.Place = NewEvent.Place;
-            tempEvent.DateTime = NewEvent.DateTime;
-            
-            Events.Add(tempEvent);
+            Events.Add(NyEvent);
+
   
-            //Skal kunne addere en EVent til collectionen.
+            //Skal kunne addere en Event til collectionen.
         }
     }
 

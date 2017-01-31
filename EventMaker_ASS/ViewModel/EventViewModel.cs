@@ -44,7 +44,6 @@ namespace EventMaker_ASS.ViewModel
             DateTime dt = System.DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-
         }
 
         //public DateTime DateTime { get; set; }
