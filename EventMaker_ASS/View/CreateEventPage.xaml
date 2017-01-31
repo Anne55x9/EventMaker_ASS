@@ -23,8 +23,7 @@
         <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="175,194,0,0" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay}" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay}" />
         <TimePicker HorizontalAlignment="Left" Margin="56,303,0,0" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay}" />
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="15,367,0,0" VerticalAlignment="Top" Width="116" ClickMode="{Binding CreateEventCommand, Mode=TwoWay}"/>
-        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="716,241,-424,0" VerticalAlignment="Top"/>
-
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="15,367,0,0" VerticalAlignment="Top" Width="116" Command="{Binding CreateEventCommand, Mode=TwoWay}"/>
+        
     </Grid>
 </Page>
