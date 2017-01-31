@@ -51,6 +51,7 @@ namespace EventMaker_ASS.Model
             set { _dateTime = value; }
         }
 
+
         public Event()
         {
 
