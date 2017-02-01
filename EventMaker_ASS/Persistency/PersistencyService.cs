@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace EventMaker_ASS.Persistency
 {
-    class PersistencyService
+    public class PersistencyService
     {
         // FileIO er en statisk klasse.
         /// <summary>
@@ -23,7 +23,7 @@ namespace EventMaker_ASS.Persistency
         const string fileName = "EventMaker.json";
 
 
-        public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
+        public static async void SaveEventsAsJsonAsync()
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             string JsonData = JsonConvert.SerializeObject(EventCatalogSingleton.Instance.Events);

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EventMaker_ASS.Persistency;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,30 +38,30 @@ namespace EventMaker_ASS.Model
         private EventCatalogSingleton()
         {
             Events = new ObservableCollection<Event>();
-            
+            LoadJson();
         }
 
         public void AddEvent(Event NyEvent)
         {
             Events.Add(NyEvent);
+            PersistencyService.SaveEventsAsJsonAsync();
 
             //Skal kunne addere en Event til collectionen.
         }
 
-        public string GetJson()
+
+        public void RemoveEvent(Event EventTilRemove)
         {
-            string json = JsonConvert.SerializeObject(this);
-            return json;
+            Events.Remove(EventTilRemove);
+            PersistencyService.SaveEventsAsJsonAsync();
         }
 
-        public void InsertJson(string jsonText)
+        public async void LoadJson()
         {
-            ObservableCollection<Event> nyListe = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonText);
-            foreach (var Event in nyListe)
-            {
-                nyListe.Add(Event);
-            }
+            Events = await PersistencyService.LoadEventsFromJsonAsync(); 
         }
+
+     
     }
 
 }
