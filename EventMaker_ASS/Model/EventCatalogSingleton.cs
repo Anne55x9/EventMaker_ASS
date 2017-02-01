@@ -52,6 +52,15 @@ namespace EventMaker_ASS.Model
             string json = JsonConvert.SerializeObject(this);
             return json;
         }
+
+        public void InsertJson(string jsonText)
+        {
+            ObservableCollection<Event> nyListe = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonText);
+            foreach (var Event in nyListe)
+            {
+                nyListe.Add(Event);
+            }
+        }
     }
 
 }

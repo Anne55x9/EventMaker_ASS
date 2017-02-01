@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using EventMaker_ASS.Model;
+using Windows.UI.Popups;
+using Newtonsoft.Json;
 
 namespace EventMaker_ASS.Persistency
 {
@@ -16,47 +19,24 @@ namespace EventMaker_ASS.Persistency
         /// Async and await til at lave et responsivt brugerflade design. 
         /// </summary>
         /// 
-        StorageFolder localfolder = null;
 
-        public EventCatalogSingleton EventsJson { get; set; }
+        const string fileName = "EventMaker.json";
 
-        private readonly string filnavn = "EventMaker.json";
 
-        public async void SaveDataToDiscAsync()
+        public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
         {
-            string JsonText = this.EventsJson.GetJson();
-            StorageFile file = await localfolder.CreateFileAsync(this.filnavn, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(file, JsonText);
+            StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            string JsonData = JsonConvert.SerializeObject(EventCatalogSingleton.Instance.Events);
+            await FileIO.WriteTextAsync(localFile, JsonData); 
+
         }
 
-        /// <summary>
-        /// Metoden inkluderer exceptionhåndtering med try/catch med message box (using Windows.UI.Popups). 
-        /// Det går ud på at hvis der ikke er gemt en fil med listen i Json format så
-        /// vises en besked box med titel og forklarende indhold til bruger. 
-        /// </summary>
-
-        public async void GetDataFromDiscAsync()
+        public static async Task<ObservableCollection<Event>> LoadEventsFromJsonAsync()
         {
-            try
-            {
-                StorageFile file = await localfolder.GetFileAsync(filnavn);
-                string jsonText = await FileIO.ReadTextAsync(file);
-
-                this.CoffeeList.Clear();
-                CoffeeList.InsertJson(jsonText);
-            }
-            catch (Exception)
-            {
-                MessageDialog NoData = new MessageDialog("No Data Found", "Error!");
-                await NoData.ShowAsync();
-            }
+            StorageFile localFile = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+            String jsonData = await FileIO.ReadTextAsync(localFile);
+            return JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonData);
         }
-
-
-        //public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
-        //{
-
-        //}
 
         //public static async void SerializeEventsFilsAsync(string eventsString, string fileName)
         //{
@@ -67,5 +47,7 @@ namespace EventMaker_ASS.Persistency
         //{
 
         //}
+
+ 
     }
 }
