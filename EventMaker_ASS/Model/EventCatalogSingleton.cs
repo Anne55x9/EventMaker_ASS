@@ -54,6 +54,11 @@ namespace EventMaker_ASS.Model
             Events.Remove(deleteEvent);
             PersistencyService.SaveEventsAsJsonAsync();
         }
+        //public void RemoveEvent(Event EventTilRemove)
+        //{
+        //    Events.Remove(EventTilRemove);
+        //    PersistencyService.SaveEventsAsJsonAsync();
+        //}
 
         public async void LoadJson()
         {

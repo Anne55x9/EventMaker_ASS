@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using EventMaker_ASS.Model;
 using Windows.UI.Popups;
 using Newtonsoft.Json;
 

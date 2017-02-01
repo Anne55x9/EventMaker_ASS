@@ -30,5 +30,12 @@ namespace EventMaker_ASS.Handler
 
             EventCatalogSingleton.Instance.AddEvent(tempEvent);
         }
+
+
+        //public void DeleteEvent()
+        //{
+            
+        //    EventCatalogSingleton.Instance.RemoveEvent();
+        //}
     }
 }

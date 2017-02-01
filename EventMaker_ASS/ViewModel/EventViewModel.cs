@@ -12,7 +12,7 @@ namespace EventMaker_ASS.ViewModel
 {
     public class EventViewModel // : INotifyPropertyChanged
     {
- 
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -55,6 +55,17 @@ namespace EventMaker_ASS.ViewModel
 
         public ICommand CreateEventCommand { get; set; }
 
+        public ICommand DeleteEventCommand { get; set; }
+
+        private Event _selectedEvent;
+
+        public Event SelectedEvent
+        {
+            get { return _selectedEvent; }
+            set { _selectedEvent = value; }
+        }
+
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
@@ -65,7 +76,9 @@ namespace EventMaker_ASS.ViewModel
 
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
-        }
+            //DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
+           
 
+        }
     }
 }
