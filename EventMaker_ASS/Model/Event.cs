@@ -61,7 +61,7 @@ namespace EventMaker_ASS.Model
 
         public override string ToString()
         {
-            return $"{Id} {Name} {Description} {Place}";
+            return $"{Id} {Name} {Description} {Place} {DateTime}";
         }
     }
 }

@@ -43,12 +43,12 @@ namespace EventMaker_ASS.ViewModel
 
         /// Fuld property af events som også er oprettet i EventCatalogSingleton filen. 
 
-        private ObservableCollection<Event> _events;
+        private ObservableCollection<Event> _eventList;
 
-        public ObservableCollection<Event> Events
+        public ObservableCollection<Event> EventList
         {
-            get { return _events; }
-            set { _events = value; }
+            get { return _eventList; }
+            set { _eventList = value; }
         }
 
         public Handler.EventHandler eh { get; set; }
@@ -61,7 +61,7 @@ namespace EventMaker_ASS.ViewModel
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
-            Events = EventCatalogSingleton.Instance.Events;
+            EventList = EventCatalogSingleton.Instance.Events;
 
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
