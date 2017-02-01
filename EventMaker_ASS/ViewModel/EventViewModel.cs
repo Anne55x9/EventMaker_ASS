@@ -38,7 +38,6 @@ namespace EventMaker_ASS.ViewModel
             set { _time = value; }
         }
 
-
         /// <summary>
         /// Nedenforstående property eventhandler er af datatypen Eventhandler. 
         /// Metoden i eventhandleren CreateEvnet kan nu tilgås via´"filstien"
@@ -56,11 +55,11 @@ namespace EventMaker_ASS.ViewModel
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
             eh = new Handler.EventHandler(this);
-            //CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
+            CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
         }
 
 
-        //public DateTime DateTime { get; set; }
+        
 
     }
 }
