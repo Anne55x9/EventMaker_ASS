@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -44,6 +45,12 @@ namespace EventMaker_ASS.Model
             Events.Add(NyEvent);
 
             //Skal kunne addere en Event til collectionen.
+        }
+
+        public string GetJson()
+        {
+            string json = JsonConvert.SerializeObject(this);
+            return json;
         }
     }
 
