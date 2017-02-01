@@ -51,13 +51,17 @@ namespace EventMaker_ASS.Model
             set { _dateTime = value; }
         }
 
-        public Event()
+        public Event(int id, string name, string description, string place)
         {
-
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Place = place;
         }
+
         public override string ToString()
         {
-            return base.ToString();
+            return $"{Id} {Name} {Description} {Place}";
         }
     }
 }

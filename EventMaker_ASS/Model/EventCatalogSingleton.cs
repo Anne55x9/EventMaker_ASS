@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace EventMaker_ASS.Model
 {
-    class EventCatalogSingleton         
+    public class EventCatalogSingleton         
     {
         private static EventCatalogSingleton _instance;
 
         //Tom konstruktor
-      
-            public static EventCatalogSingleton Instance
+
+        public static EventCatalogSingleton Instance
         {
             get
             {
@@ -27,22 +27,22 @@ namespace EventMaker_ASS.Model
             }
         }
 
+        /// <summary>
+        /// Prop af Events
+        /// </summary>
+        /// 
         public ObservableCollection<Event> Events { get; set; }
-
-        //public Model.Event NewEvent { get; set; }
 
         private EventCatalogSingleton()
         {
-            //NewEvent = new Model.Event();
-           
             Events = new ObservableCollection<Event>();
+            
         }
 
         public void AddEvent(Event NyEvent)
         {
             Events.Add(NyEvent);
 
-  
             //Skal kunne addere en Event til collectionen.
         }
     }

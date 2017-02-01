@@ -6,21 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using EventMaker_ASS.Common;
 using System.Windows.Input;
-
+using System.Collections.ObjectModel;
 
 namespace EventMaker_ASS.ViewModel
 {
     public class EventViewModel // : INotifyPropertyChanged
     {
-       private EventCatalogSingleton SingleEvent { get; set; }
-
-
+ 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }
-
-      
 
         private DateTimeOffset _date;
 
@@ -43,6 +39,18 @@ namespace EventMaker_ASS.ViewModel
         /// Metoden i eventhandleren CreateEvnet kan nu tilgås via´"filstien"
         /// Handler.EventHandler. 
         /// </summary>
+        /// 
+
+        /// Fuld property af events som også er oprettet i EventCatalogSingleton filen. 
+
+        private ObservableCollection<Event> _events;
+
+        public ObservableCollection<Event> Events
+        {
+            get { return _events; }
+            set { _events = value; }
+        }
+
 
         public Handler.EventHandler eh { get; set; }
 
@@ -54,12 +62,11 @@ namespace EventMaker_ASS.ViewModel
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
+            Events = EventCatalogSingleton.Instance.Events;
+
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
         }
-
-
-        
 
     }
 }

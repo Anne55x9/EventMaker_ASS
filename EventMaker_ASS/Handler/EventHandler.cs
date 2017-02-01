@@ -13,18 +13,14 @@ namespace EventMaker_ASS.Handler
     {
         private EventViewModel Evm { get; set; }
 
-        public Event NyEvent { get; set; }
-
         public EventHandler(EventViewModel evm)
         {
             this.Evm = evm;
         }
 
-        //public object Events { get; private set; }
-
         public void CreateEvent()
         {
-            Event tempEvent = new Event();
+            Event tempEvent = new Event(Evm.Id,Evm.Name,Evm.Description,Evm.Place);
             tempEvent.Id = Evm.Id;
             tempEvent.Name = Evm.Name;
             tempEvent.Description = Evm.Description;
@@ -32,7 +28,7 @@ namespace EventMaker_ASS.Handler
 
             tempEvent.DateTime = DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Evm.Date, Evm.Time);
 
-            EventCatalogSingleton.Instance.AddEvent(NyEvent);
+            EventCatalogSingleton.Instance.AddEvent(tempEvent);
         }
     }
 }
