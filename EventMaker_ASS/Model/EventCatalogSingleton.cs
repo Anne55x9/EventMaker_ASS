@@ -49,10 +49,9 @@ namespace EventMaker_ASS.Model
             //Skal kunne addere en Event til collectionen.
         }
 
-
-        public void RemoveEvent(Event EventTilRemove)
+        public void RemoveEvent(Event deleteEvent)
         {
-            Events.Remove(EventTilRemove);
+            Events.Remove(deleteEvent);
             PersistencyService.SaveEventsAsJsonAsync();
         }
 
