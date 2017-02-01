@@ -51,7 +51,6 @@ namespace EventMaker_ASS.ViewModel
             set { _events = value; }
         }
 
-
         public Handler.EventHandler eh { get; set; }
 
         public ICommand CreateEventCommand { get; set; }
