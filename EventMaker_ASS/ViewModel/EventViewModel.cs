@@ -20,7 +20,7 @@ namespace EventMaker_ASS.ViewModel
         public string Description { get; set; }
         public string Place { get; set; }
 
-        public ICommand CreateEventCommand { get; set; }
+      
 
         private DateTimeOffset _date;
 
@@ -44,8 +44,10 @@ namespace EventMaker_ASS.ViewModel
         /// Metoden i eventhandleren CreateEvnet kan nu tilgås via´"filstien"
         /// Handler.EventHandler. 
         /// </summary>
-        public Handler.EventHandler eventhandler { get; set; }
-        
+
+        public Handler.EventHandler eh { get; set; }
+
+        public ICommand CreateEventCommand { get; set; }
 
         public EventViewModel()
         {
@@ -53,8 +55,8 @@ namespace EventMaker_ASS.ViewModel
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
-            //eventhandler = new Handler.EventHandler(this);
-            //CreateEventCommand = new RelayCommand(eventhandler.CreateEvent, null);
+            eh = new Handler.EventHandler(this);
+            //CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
         }
 
 

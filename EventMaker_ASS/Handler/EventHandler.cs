@@ -11,13 +11,13 @@ namespace EventMaker_ASS.Handler
 {
     public class EventHandler
     {
-        public EventViewModel evm { get; set; }
+        private EventViewModel Evm { get; set; }
 
         public Event NyEvent { get; set; }
 
         public EventHandler(EventViewModel evm)
         {
-            this.evm = new EventViewModel();
+            this.Evm = evm;
         }
 
         //public object Events { get; private set; }
@@ -25,12 +25,12 @@ namespace EventMaker_ASS.Handler
         public void CreateEvent()
         {
             Event tempEvent = new Event();
-            tempEvent.Id = evm.Id;
-            tempEvent.Name = evm.Name;
-            tempEvent.Description = evm.Description;
-            tempEvent.Place = evm.Place;
+            tempEvent.Id = Evm.Id;
+            tempEvent.Name = Evm.Name;
+            tempEvent.Description = Evm.Description;
+            tempEvent.Place = Evm.Place;
 
-            tempEvent.DateTime = DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(evm.Date, evm.Time);
+            tempEvent.DateTime = DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Evm.Date, Evm.Time);
 
             EventCatalogSingleton.Instance.AddEvent(NyEvent);
         }
