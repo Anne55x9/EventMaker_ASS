@@ -58,7 +58,7 @@ namespace EventMaker_ASS.ViewModel
         public ObservableCollection<Event> EventList
         {
             get { return _eventList; }
-            set { _eventList = value; }
+            set { _eventList = value; OnPropertyChanged(nameof(EventList)); }
         }
 
         public Handler.EventHandler eh { get; set; }
@@ -86,7 +86,16 @@ namespace EventMaker_ASS.ViewModel
 
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
-            DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
+            DeleteEventCommand = new RelayCommand(eh.DeleteEvent, DeleteCommand);
+        }
+
+        public bool DeleteCommand()
+        {
+            if (EventList == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
