@@ -38,7 +38,10 @@ namespace EventMaker_ASS.Model
         private EventCatalogSingleton()
         {
             Events = new ObservableCollection<Event>();
+            //if (ObservableCollection<Event> > 0)
+            //{
             LoadJson();
+            //}
         }
 
         public void AddEvent(Event NyEvent)
@@ -54,18 +57,17 @@ namespace EventMaker_ASS.Model
             Events.Remove(deleteEvent);
             PersistencyService.SaveEventsAsJsonAsync();
         }
-        //public void RemoveEvent(Event EventTilRemove)
-        //{
-        //    Events.Remove(EventTilRemove);
-        //    PersistencyService.SaveEventsAsJsonAsync();
-        //}
 
         public async void LoadJson()
         {
-            Events = await PersistencyService.LoadEventsFromJsonAsync(); 
+            //if (Event > 0)
+            //{
+                Events = await PersistencyService.LoadEventsFromJsonAsync();
+            //}
+
         }
 
-     
+
     }
 
 }
