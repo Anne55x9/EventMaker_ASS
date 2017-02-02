@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 using EventMaker_ASS.Common;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace EventMaker_ASS.ViewModel
 {
-    public class EventViewModel // : INotifyPropertyChanged
+    public class EventViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyname)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+            }
+        }
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -62,7 +72,7 @@ namespace EventMaker_ASS.ViewModel
         public Event SelectedEvent
         {
             get { return _selectedEvent; }
-            set { _selectedEvent = value; }
+            set { _selectedEvent = value; OnPropertyChanged(nameof(SelectedEvent)); }
         }
 
 
@@ -76,8 +86,8 @@ namespace EventMaker_ASS.ViewModel
 
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
-            //DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
-           
+            DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
+
 
         }
     }

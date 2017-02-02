@@ -13,6 +13,8 @@ namespace EventMaker_ASS.Handler
     {
         private EventViewModel Evm { get; set; }
 
+        //public Event deleteEvent { get; private set; }
+
         public EventHandler(EventViewModel evm)
         {
             this.Evm = evm;
@@ -31,11 +33,9 @@ namespace EventMaker_ASS.Handler
             EventCatalogSingleton.Instance.AddEvent(tempEvent);
         }
 
-
-        //public void DeleteEvent()
-        //{
-            
-        //    EventCatalogSingleton.Instance.RemoveEvent();
-        //}
+        public void DeleteEvent()
+        {
+            EventCatalogSingleton.Instance.Events.Remove(Evm.SelectedEvent);
+        }
     }
 }
