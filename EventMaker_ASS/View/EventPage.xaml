@@ -15,10 +15,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="305" Margin="10,52,0,0" VerticalAlignment="Top" Width="600" ItemsSource="{Binding EventList,  Mode=TwoWay}"  BorderBrush="Black" BorderThickness="1" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"/>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Label="Next" Margin="272,554,0,0" VerticalAlignment="Top" Icon="Forward">
-
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="305" Margin="10,52,0,0" VerticalAlignment="Top" Width="600" ItemsSource="{Binding EventList,  Mode=TwoWay}"  BorderBrush="Black" BorderThickness="1" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"/>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Label="Next" Margin="272,529,0,0" VerticalAlignment="Top" Icon="Forward">
 
