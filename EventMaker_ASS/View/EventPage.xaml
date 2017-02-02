@@ -15,7 +15,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="305" Margin="10,52,0,0" VerticalAlignment="Top" Width="330" ItemsSource="{Binding EventList,  Mode=TwoWay}"  BorderBrush="Black" BorderThickness="1" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="305" Margin="10,52,0,0" VerticalAlignment="Top" Width="330" ItemsSource="{Binding EventList,  Mode=TwoWay}"  BorderBrush="Black" BorderThickness="1" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Label="Next" Margin="272,554,0,0" VerticalAlignment="Top" Icon="Forward">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
@@ -23,7 +29,7 @@
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
-        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Left" Icon="Delete" Label="Delete" Margin="10,554,0,0" VerticalAlignment="Top" Command="{Binding DeleteEventCommand, Mode=TwoWay}"/>
+        <AppBarButton x:Name="deleteButton" HorizontalAlignment="Left" Icon="Delete" Label="Delete" Margin="10,554,0,0" VerticalAlignment="Top" Command="{Binding DeleteEventCommand, Mode=TwoWay}"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,412,0,0" TextWrapping="Wrap" Text="{Binding SelectedEvent, Mode=TwoWay}" VerticalAlignment="Top" Width="330" Height="112"/>
 
     </Grid>
