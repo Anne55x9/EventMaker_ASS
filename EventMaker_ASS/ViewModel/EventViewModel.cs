@@ -87,8 +87,6 @@ namespace EventMaker_ASS.ViewModel
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
             DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
-
-
         }
     }
 }
