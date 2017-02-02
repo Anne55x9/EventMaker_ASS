@@ -60,10 +60,20 @@ namespace EventMaker_ASS.Model
 
         public async void LoadJson()
         {
-            //if (Event > 0)
-            //{
+            try
+            {
                 Events = await PersistencyService.LoadEventsFromJsonAsync();
-            //}
+            }
+            catch (Exception e)
+            {
+
+                System.Diagnostics.Debug.Write($"Exception: { e }");
+            }
+            
+            ////if (Event > 0)
+            ////{
+            //    Events = await PersistencyService.LoadEventsFromJsonAsync();
+            ////}
 
         }
 
