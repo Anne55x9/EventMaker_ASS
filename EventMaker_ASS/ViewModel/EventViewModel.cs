@@ -91,9 +91,9 @@ namespace EventMaker_ASS.ViewModel
 
         public bool IfEventListIsEmpty()
         {
-            if (EventCatalogSingleton.Instance.Events == null) return false;
-            //if (EventList == null) return false;
-            return true;             
+            //if (EventCatalogSingleton.Instance.Events == null) return false;
+            if (EventList.Count > 0) return true;
+            return false;             
         }
     }
 }
