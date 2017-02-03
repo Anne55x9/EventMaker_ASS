@@ -86,7 +86,14 @@ namespace EventMaker_ASS.ViewModel
 
             eh = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(eh.CreateEvent, null);
-            DeleteEventCommand = new RelayCommand(eh.DeleteEvent, null);
+            DeleteEventCommand = new RelayCommand(eh.DeleteEvent, IfEventListIsEmpty);
+        }
+
+        public bool IfEventListIsEmpty()
+        {
+            //if (EventCatalogSingleton.Instance.Events == null) return false;
+            if (EventList.Count > 0) return true;
+            return false;             
         }
     }
 }

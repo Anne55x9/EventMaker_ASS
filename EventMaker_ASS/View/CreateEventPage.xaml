@@ -14,18 +14,18 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="89,108,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="175,104,0,0" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay}" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="89,138,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="175,134,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="89,168,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" Margin="175,164,0,0" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay}" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="89,198,0,0" TextWrapping="Wrap" Text="Place" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
-        <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="175,194,0,0" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay}" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay}" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="38,82,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="124,78,0,0" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay}" VerticalAlignment="Top" Width="174"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="38,112,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="124,108,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="174"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="38,142,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Margin="124,138,0,0" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay}" VerticalAlignment="Top" Width="174"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="38,172,0,0" TextWrapping="Wrap" Text="Place" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBox x:Name="Place" HorizontalAlignment="Left" Margin="124,168,0,0" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay}" VerticalAlignment="Top" Width="174"/>
+        <DatePicker HorizontalAlignment="Left" Margin="38,225,0,0" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay}" Width="174" />
         <TimePicker HorizontalAlignment="Left" Margin="56,303,0,0" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay}" />
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Add" Label="Add" Margin="15,367,0,0" VerticalAlignment="Top" Width="116" Command="{Binding CreateEventCommand, Mode=TwoWay}"/>
-        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Right" Icon="Back" Label="Back" Margin="0,0,62,213" VerticalAlignment="Bottom">
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Add" Label="Add" Margin="56,335,0,0" VerticalAlignment="Top" Width="40" Command="{Binding CreateEventCommand, Mode=TwoWay}"/>
+        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Right" Icon="Back" Label="Back" Margin="0,0,62,245" VerticalAlignment="Bottom" Width="40" Height="60">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker_ASS.View.EventPage"/>
