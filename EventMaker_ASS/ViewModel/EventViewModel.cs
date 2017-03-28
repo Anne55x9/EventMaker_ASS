@@ -75,6 +75,7 @@ namespace EventMaker_ASS.ViewModel
             set { _selectedEvent = value; OnPropertyChanged(nameof(SelectedEvent)); }
         }
 
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
@@ -90,8 +91,11 @@ namespace EventMaker_ASS.ViewModel
 
         public bool IfEventListIsEmpty()
         {
-            if (EventList.Count > 0) return true;
-            return false;             
+            if (EventList.Count > 0)
+                return true;
+            else
+                return false;             
         }
+
     }
 }
