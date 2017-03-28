@@ -30,6 +30,7 @@ namespace EventMaker_ASS.Persistency
 
         }
 
+
         public static async Task<ObservableCollection<Event>> LoadEventsFromJsonAsync()
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
